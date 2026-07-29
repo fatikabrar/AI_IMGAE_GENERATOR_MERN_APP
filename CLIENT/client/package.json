@@ -24,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.4.2",
+      "eslint-plugin-jest": "^27.9.0",
     "web-vitals": "^2.1.4"
   },
  "scripts": {
@@ -33,13 +34,15 @@
   "eject": "react-scripts eject"
 },
  "eslintConfig": {
-  "extends": [
-    "react-app",
-    "react-app/jest"
-  ],
-  "env": {
-    "jest": true
-  }
+  "extends": "react-app",
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/*.test.jsx", "**/*.spec.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 },
   "browserslist": {
     "production": [
